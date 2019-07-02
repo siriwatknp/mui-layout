@@ -1,0 +1,44 @@
+{
+  "name": "@siriwatknp/mui-layout",
+  "version": "1.0.0",
+  "description": "Instantly build dynamic and responsive layout based on React Material-UI",
+  "main": "dist/index.js",
+  "repository": "https://github.com/siriwatknp/mui-layout.git",
+  "author": "siriwatknp <siriwatkunaporn@gmail.com>",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*src/**/*.{js,jsx}": [
+      "eslint"
+    ]
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist --copy-files"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@material-ui/core": "^4.1.3",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.1.2",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.5.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
