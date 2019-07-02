@@ -1,6 +1,18 @@
 export const createDefaultLayout = config => ({
   navWidth: 256,
   navAnchor: 'left',
+  navVariant: 'temporary',
+  collapsible: false,
+  collapsedWidth: 64,
+  clipped: false,
+  headerPosition: 'relative',
+  squeezed: false,
+  footerShrink: true,
+  ...config,
+});
+
+export const createStandardLayout = config => ({
+  ...createDefaultLayout(),
   navVariant: {
     xs: 'temporary',
     sm: 'permanent',
@@ -9,11 +21,6 @@ export const createDefaultLayout = config => ({
     xs: false,
     sm: true,
   },
-  collapsedWidth: 64,
-  clipped: false,
-  headerPosition: 'relative',
-  squeezed: false,
-  footerShrink: true,
   ...config,
 });
 
