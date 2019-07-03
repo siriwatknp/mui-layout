@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Box from '@material-ui/core/Box';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
 import MenuRounded from '@material-ui/icons/MenuRounded';

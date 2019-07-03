@@ -10,11 +10,11 @@ const styles = ({ breakpoints, transitions }) => ({
     transition: transitions.create(),
     [breakpoints.up('sm')]: {
       padding: 24,
-      maxWidth: 500,
+      maxWidth: 700,
       margin: 'auto',
     },
     [breakpoints.up('md')]: {
-      maxWidth: 700,
+      maxWidth: 960,
     },
   },
 });

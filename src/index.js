@@ -7,4 +7,5 @@ export { default as Footer } from './components/Footer';
 export { default as useConfig } from './hooks/useConfig';
 export { default as useWidth } from './hooks/useWidth';
 export { default as useHeightAdjustment } from './hooks/useHeightAdjustment';
+export { default as useAutoCollapse } from './hooks/useAutoCollapse';
 export * from './utils/presets';
