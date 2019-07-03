@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import useFullConfig from 'hooks/useFullConfig';
+import Box from '@material-ui/core/Box';
+import useConfig from 'hooks/useConfig';
 
 const getMargin = ({
   navAnchor,
@@ -40,6 +41,11 @@ const getWidth = ({ opened, navVariant, squeezed }) => {
   }
   return 'auto';
 };
+const getHeight = ({ headerPosition, initialAdjustmentHeight }) => {
+  if (headerPosition === 'fixed' || headerPosition === 'absolute')
+    return initialAdjustmentHeight;
+  return 0;
+};
 
 const useStyles = makeStyles(({ transitions }) => ({
   root: {
@@ -51,24 +57,36 @@ const useStyles = makeStyles(({ transitions }) => ({
   },
 }));
 
-const Content = ({ component: Component, className, style, ...props }) => {
-  const ctx = useFullConfig();
+const Content = ({
+  component: Component,
+  className,
+  children,
+  style,
+  ...props
+}) => {
+  const ctx = useConfig();
   const classes = useStyles(props);
   return (
-    <Component
-      {...props}
-      className={`${className} ${classes.root}`}
-      style={{
-        ...style,
-        marginLeft: getMargin(ctx),
-        width: getWidth(ctx),
-      }}
-    />
+    <>
+      <Box height={getHeight(ctx)} />
+      <Component
+        {...props}
+        className={`${className} ${classes.root}`}
+        style={{
+          ...style,
+          marginLeft: getMargin(ctx),
+          width: getWidth(ctx),
+        }}
+      >
+        {typeof children === 'function' ? children(ctx) : children}
+      </Component>
+    </>
   );
 };
 
 Content.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
   component: PropTypes.elementType,
   style: PropTypes.shape({}),
 };

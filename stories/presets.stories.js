@@ -24,58 +24,6 @@ import HeaderEx from './mock/HeaderEx';
 import ContentEx from './mock/ContentEx';
 import FooterEx from './mock/FooterEx';
 
-const Component = () => {
-  const [hidden, setHidden] = useState(false);
-  const handleScroll = () => {
-    if (window.scrollY >= 64 && !hidden) {
-      setHidden(true);
-    }
-    if (window.scrollY < 64 && hidden) {
-      setHidden(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
-  return (
-    <Root config={createMuiTreasuryLayout()}>
-      <Header
-        renderMenuIcon={open => (open ? <ChevronLeft /> : <MenuRounded />)}
-      >
-        {({ screen, collapsed }) => (
-          <HeaderEx screen={screen} collapsed={collapsed} />
-        )}
-      </Header>
-      <Nav
-        renderIcon={collapsed =>
-          collapsed ? <ChevronRight /> : <ChevronLeft />
-        }
-        header={({ collapsed }) => (
-          <>
-            <Box
-              height={hidden ? 0 : 64}
-              flexShrink={0}
-              css={{ transition: '0.3s' }}
-            />
-            <NavHeaderEx collapsed={collapsed} />
-          </>
-        )}
-      >
-        <NavContentEx />
-      </Nav>
-      <Content>
-        <ContentEx />
-      </Content>
-      <Footer>
-        <FooterEx />
-      </Footer>
-    </Root>
-  );
-};
-
 storiesOf('Presets', module)
   .add('Default', () => (
     <Root>
@@ -140,14 +88,7 @@ storiesOf('Presets', module)
         renderIcon={collapsed =>
           collapsed ? <ChevronRight /> : <ChevronLeft />
         }
-        header={({ collapsed, screen }) => (
-          <>
-            {screen !== 'xs' && screen !== 'sm' && (
-              <Box height={64} flexShrink={0} />
-            )}
-            <NavHeaderEx collapsed={collapsed} />
-          </>
-        )}
+        header={({ collapsed }) => <NavHeaderEx collapsed={collapsed} />}
       >
         <NavContentEx />
       </Nav>
@@ -209,4 +150,28 @@ storiesOf('Presets', module)
       </Footer>
     </Root>
   ))
-  .add('Mui Treasury', () => <Component />);
+  .add('Mui Treasury', () => (
+    <Root config={createMuiTreasuryLayout()}>
+      <Header
+        renderMenuIcon={open => (open ? <ChevronLeft /> : <MenuRounded />)}
+      >
+        {({ screen, collapsed }) => (
+          <HeaderEx screen={screen} collapsed={collapsed} />
+        )}
+      </Header>
+      <Nav
+        renderIcon={collapsed =>
+          collapsed ? <ChevronRight /> : <ChevronLeft />
+        }
+        header={({ collapsed }) => <NavHeaderEx collapsed={collapsed} />}
+      >
+        <NavContentEx />
+      </Nav>
+      <Content>
+        <ContentEx />
+      </Content>
+      <Footer>
+        <FooterEx />
+      </Footer>
+    </Root>
+  ));

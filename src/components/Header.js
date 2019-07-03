@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import useFullConfig from 'hooks/useFullConfig';
+import useConfig from 'hooks/useConfig';
 
 const createGet = (
   { clipped, navVariant, collapsible, collapsed, opened, squeezed, navAnchor },
@@ -58,7 +58,7 @@ const Header = ({
   menuButtonProps,
   ...props
 }) => {
-  const ctx = useFullConfig();
+  const ctx = useConfig();
   const {
     clipped,
     collapsedWidth,

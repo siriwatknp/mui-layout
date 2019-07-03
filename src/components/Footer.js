@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import useFullConfig from 'hooks/useFullConfig';
+import useConfig from 'hooks/useConfig';
 
 const useStyles = makeStyles(
   ({ breakpoints, palette, spacing, transitions }) => ({
@@ -21,7 +21,7 @@ const useStyles = makeStyles(
 );
 
 const Footer = ({ className, component: Component, style, ...props }) => {
-  const ctx = useFullConfig();
+  const ctx = useConfig();
   const {
     navVariant,
     navWidth,

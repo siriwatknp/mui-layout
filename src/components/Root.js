@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import LayoutContext from 'context';
 import { createDefaultLayout } from 'utils/presets';
-import useScreenConfig from 'hooks/useScreenConfig';
+import useMergedConfig from 'hooks/useMergedConfig';
 import useWidth from 'hooks/useWidth';
 
 const initialConfig = createDefaultLayout();
@@ -12,7 +12,7 @@ const initialConfig = createDefaultLayout();
 const Root = ({ children, config }) => {
   const [collapsed, setCollapsed] = useState(false);
   const [opened, setOpened] = useState(false);
-  const mergedConfig = useScreenConfig(config, initialConfig);
+  const mergedConfig = useMergedConfig(config, initialConfig);
   const screen = useWidth();
   return (
     <LayoutContext.Provider
