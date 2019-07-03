@@ -20,7 +20,12 @@ import FooterEx from './mock/FooterEx';
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Components', module)
-  .add('Root', () => <Root />)
+  .add('Root', () => (
+    <Root>
+      <code>Root</code> is just a Provider, it does not return any DOM on the
+      screen.
+    </Root>
+  ))
   .add('Header', () => (
     <Root>
       <Header

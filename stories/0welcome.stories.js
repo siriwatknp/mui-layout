@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
-storiesOf('00-Welcome', module)
+storiesOf('Welcome', module)
   .add('Introduction', () => (
     <Box maxWidth={700} p={2} mx={'auto'}>
       <Typography variant={'overline'}>INTRODUCING</Typography>
@@ -176,26 +176,26 @@ storiesOf('00-Welcome', module)
     </Box>
   ))
   .add('How to', () => (
-    <Box maxWidth={700} p={2} mx={'auto'}>
-      <Typography variant={'subtitle1'}>
-        <b>
-          1.{' '}
-          <Link
-            target={'_blank'}
-            rel="noopener"
-            href={
-              'https://material.io/design/components/navigation-drawer.html#'
-            }
-            color={'secondary'}
-          >
-            Open this sandbox
-          </Link>
-        </b>
-      </Typography>
-      <Typography variant={'subtitle1'} gutterBottom>
-        <b>2. Adjust Config</b>
-      </Typography>
+    <Box maxWidth={960} p={2} mx={'auto'}>
+      {/*<Typography variant={'subtitle1'}>*/}
+      {/*  <b>*/}
+      {/*    1.{' '}*/}
+      {/*    <Link*/}
+      {/*      target={'_blank'}*/}
+      {/*      rel="noopener"*/}
+      {/*      href={*/}
+      {/*        'https://material.io/design/components/navigation-drawer.html#'*/}
+      {/*      }*/}
+      {/*      color={'secondary'}*/}
+      {/*    >*/}
+      {/*      Open this sandbox*/}
+      {/*    </Link>*/}
+      {/*  </b>*/}
+      {/*</Typography>*/}
       <Box px={1}>
+        <Typography variant={'subtitle1'} gutterBottom>
+          <b>Adjust Config</b>
+        </Typography>
         <Typography variant={'subtitle1'} gutterBottom>
           config is just a plain object that defines behavior of your layout.
           Mostly, the value of each field can be an object pattern (mediaQuery).

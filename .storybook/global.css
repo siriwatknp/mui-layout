@@ -1,3 +1,21 @@
 body {
-    background: none!important;
+  background: none !important;
+}
+
+code {
+  margin: 0 0.2em;
+  padding: 0.2em 0.4em 0.1em;
+  font-size: 75%;
+  background: rgba(218, 218, 218, 0.38);
+  border: 1px solid #c5c5c5;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
+    monospace;
+}
+
+li {
+    margin-bottom: 8px;
 }
