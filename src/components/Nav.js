@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Grow from '@material-ui/core/Grow';
 import useConfig from 'hooks/useConfig';
 import useHeightAdjustment from 'hooks/useHeightAdjustment';
+import useAutoCollapse from 'hooks/useAutoCollapse';
 
 const useStyles = makeStyles(
   ({ breakpoints, transitions, palette, spacing, zIndex, shadows }) => ({
@@ -57,6 +58,7 @@ const useStyles = makeStyles(
 );
 
 const Nav = ({ className, header, children, renderIcon, ...props }) => {
+  useAutoCollapse();
   const ctx = useConfig();
   const {
     opened,

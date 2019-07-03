@@ -1,47 +1,48 @@
 /* eslint-disable */
-import React from "react";
-import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 
-const styles = ({ breakpoints }) => ({
+const styles = ({ breakpoints, transitions }) => ({
   root: {
     padding: 16,
-    [breakpoints.up("sm")]: {
+    transition: transitions.create(),
+    [breakpoints.up('sm')]: {
       padding: 24,
       maxWidth: 500,
-      margin: "auto"
+      margin: 'auto',
     },
-    [breakpoints.up("md")]: {
-      maxWidth: 700
-    }
-  }
+    [breakpoints.up('md')]: {
+      maxWidth: 700,
+    },
+  },
 });
 
 const ContentEx = ({ classes }) => (
   <div className={classes.root}>
-    <Typography variant={"overline"}>INTRODUCING</Typography>
-    <Typography weight={"bold"} variant={"h4"} gutterBottom>
-      Material UI <Link underline={"none"}>Layout</Link>
+    <Typography variant={'overline'}>INTRODUCING</Typography>
+    <Typography weight={'bold'} variant={'h4'} gutterBottom>
+      Material UI <Link underline={'none'}>Layout</Link>
     </Typography>
     <Typography gutterBottom>
       <b>Version 1.1</b>
     </Typography>
-    <Typography indent={"small"}>
+    <Typography indent={'small'}>
       Layout is a group of Material-UI components that are enhanced and combined
       to create dynamic, easy-to-maintain and easy-to-code as much as possible.
     </Typography>
     <br />
     <br />
     <br />
-    <Typography weight={"bold"} variant={"h5"} gutterBottom>
+    <Typography weight={'bold'} variant={'h5'} gutterBottom>
       {"Let's start with Why?"}
     </Typography>
     <Typography gutterBottom>
       I created this because
       <br />
     </Typography>
-    <Typography component={"div"}>
+    <Typography component={'div'}>
       <ol>
         <li>
           It took me a lot of time to initialize dashboard layout when I have
@@ -63,31 +64,31 @@ const ContentEx = ({ classes }) => (
     <br />
     <br />
     <br />
-    <Typography weight={"bold"} variant={"h5"} gutterBottom>
+    <Typography weight={'bold'} variant={'h5'} gutterBottom>
       Objectives
     </Typography>
     <Typography>
       It must be easy enough to use, however still be able to adjust to compat
-      with real word examples and usages. More importantly, it need to follow{" "}
+      with real word examples and usages. More importantly, it need to follow{' '}
       <Link
-        target={"_blank"}
+        target={'_blank'}
         rel="noopener"
-        href={"https://material.io/design/components/navigation-drawer.html#"}
-        underline={"none"}
+        href={'https://material.io/design/components/navigation-drawer.html#'}
+        underline={'none'}
       >
         Material specs
-      </Link>{" "}
+      </Link>{' '}
       since we are 100% based on Material-UI with no other styling libraries.
       Last but not least, responsive is a must.
     </Typography>
     <br />
     <br />
     <br />
-    <Typography weight={"bold"} variant={"h5"} gutterBottom>
+    <Typography weight={'bold'} variant={'h5'} gutterBottom>
       Solution
     </Typography>
     <Typography>Separate layout into 5 components</Typography>
-    <Typography component={"div"}>
+    <Typography component={'div'}>
       <ul>
         <li>Root</li>
         <li>Header (AppBar)</li>
@@ -106,10 +107,10 @@ const ContentEx = ({ classes }) => (
     </Typography>
     <Typography>
       <b>Presets</b> is a set of predefined config that I can come up with after
-      researching a lot of the real world websites and also the{" "}
+      researching a lot of the real world websites and also the{' '}
       <Link
         href={
-          "https://material.io/design/components/navigation-drawer.html#usage"
+          'https://material.io/design/components/navigation-drawer.html#usage'
         }
       >
         official Material specs

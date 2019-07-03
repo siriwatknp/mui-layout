@@ -7,7 +7,6 @@ import useWidth from './useWidth';
 export default (config, defaultConfig = {}) => {
   // if no config passed from params, use context instead.
   const context = config || useConfig();
-  console.log('context', context);
   const {
     breakpoints: { keys },
   } = useTheme();
@@ -23,5 +22,5 @@ export default (config, defaultConfig = {}) => {
     }
     return screenContext;
   };
-  return useMemo(assignValue, [context]);
+  return useMemo(assignValue, [context, currentScreen]);
 };

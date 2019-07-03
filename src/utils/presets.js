@@ -4,6 +4,7 @@ export const createDefaultLayout = config => ({
   navVariant: 'temporary',
   collapsible: false,
   collapsedWidth: 64,
+  collapsedBreakpoint: 'md',
   clipped: false,
   heightAdjustmentDisabled: false,
   initialAdjustmentHeight: 64,
