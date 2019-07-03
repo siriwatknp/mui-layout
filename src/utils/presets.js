@@ -85,7 +85,17 @@ export const createMuiTreasuryLayout = config => ({
     xs: 'temporary',
     md: 'permanent',
   },
+  heightAdjustmentDisabled: true,
   clipped: true,
   collapsible: false,
   ...config,
 });
+
+export default {
+  createDefaultLayout,
+  createStandardLayout,
+  createFixedLayout,
+  createContentBasedLayout,
+  createCozyLayout,
+  createMuiTreasuryLayout,
+};
