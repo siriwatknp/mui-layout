@@ -5,6 +5,7 @@ export const createDefaultLayout = config => ({
   collapsible: false,
   collapsedWidth: 64,
   collapsedBreakpoint: 'md',
+  autoCollapsedDisabled: false,
   clipped: false,
   heightAdjustmentDisabled: false,
   initialAdjustmentHeight: 64,

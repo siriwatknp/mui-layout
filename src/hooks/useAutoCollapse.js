@@ -12,7 +12,12 @@ export default () => {
     collapsed,
     setCollapsed,
     collapsedBreakpoint,
+    autoCollapsedDisabled,
   } = useConfig();
+
+  if (autoCollapsedDisabled) {
+    return null;
+  }
 
   useEffect(() => {
     if (collapsible) {
@@ -27,4 +32,6 @@ export default () => {
       }
     }
   }, [screen]);
+
+  return true;
 };
