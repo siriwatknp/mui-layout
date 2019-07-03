@@ -57,9 +57,15 @@ const App = () => (
 see demo here [Storybook Demo](https://siriwatknp.github.io/mui-layout/?path=/story/welcome--introduction)
 
 ## Built-in Features
-- Collapsible Nav![Alt Text](https://media.giphy.com/media/1BgIQWDxSNQHZS0HiN/giphy.gif)
-- Header Magnet![alt text](https://media.giphy.com/media/L0ZQCiCrFiVKaHb5St/giphy.gif)
-- Auto Collapsed![alt text](https://media.giphy.com/media/XbySngD0dtVnHeDq1a/giphy.gif)
+- Collapsible Nav
+
+  ![Alt Text](https://media.giphy.com/media/1BgIQWDxSNQHZS0HiN/giphy.gif)
+- Header Magnet
+
+  ![alt text](https://media.giphy.com/media/L0ZQCiCrFiVKaHb5St/giphy.gif)
+- Auto Collapsed
+
+  ![alt text](https://media.giphy.com/media/XbySngD0dtVnHeDq1a/giphy.gif)
 - Responsive Config
   ```
   const extendedConfigs2 = {
@@ -73,10 +79,18 @@ see demo here [Storybook Demo](https://siriwatknp.github.io/mui-layout/?path=/st
   ```
   
 ## Presets
-- Standard![Alt Text](https://media.giphy.com/media/1jXGr4qb8dVizIUudS/giphy.gif)
-- Fixed![Alt Text](https://media.giphy.com/media/fnW25ZYsCtCyrX2aho/giphy.gif)
-- Content Based![Alt Text](https://media.giphy.com/media/1ZnFrQUZpCibwtTGj9/giphy.gif)
-- Cozy![Alt Text](https://media.giphy.com/media/w9d1LsOBFndXpzV62z/giphy.gif)
+- Standard
+
+  ![Alt Text](https://media.giphy.com/media/1jXGr4qb8dVizIUudS/giphy.gif)
+- Fixed
+
+  ![Alt Text](https://media.giphy.com/media/fnW25ZYsCtCyrX2aho/giphy.gif)
+- Content Based
+  
+  ![Alt Text](https://media.giphy.com/media/1ZnFrQUZpCibwtTGj9/giphy.gif)
+- Cozy
+
+  ![Alt Text](https://media.giphy.com/media/w9d1LsOBFndXpzV62z/giphy.gif)
 
 ## How it works
 - They are basically material-ui components that are combined to make things easier.
