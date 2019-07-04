@@ -17,6 +17,10 @@ yarn add mui-layout @material-ui/core @material-ui/styles
 npm install mui-layout @material-ui/core @material-ui/styles
 ```
 
+## Demo
+see demo here [Storybook Demo](https://siriwatknp.github.io/mui-layout/?path=/story/welcome--introduction)
+
+
 ## Usage
 
 ```jsx
@@ -59,9 +63,6 @@ const App = () => (
   </Root>
 )
 ```
-
-## Demo
-see demo here [Storybook Demo](https://siriwatknp.github.io/mui-layout/?path=/story/welcome--introduction)
 
 ## Built-in Features
 - Collapsible Nav
