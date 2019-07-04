@@ -19,17 +19,22 @@ npm install mui-layout @material-ui/core @material-ui/styles
 
 ## Usage
 
-```python
+```jsx
+// this example use icon from material-ui/icons, you can use your own!
+import ChevronLeft from '@material-ui/icons/ChevronLeft';
+import ChevronRight from '@material-ui/icons/ChevronRight';
+import MenuRounded from '@material-ui/icons/MenuRounded';
+
 import {
  Root,
  Header,
  Nav,
  Content,
  Footer,
- createStandardLayout,
+ presets,
 } from 'mui-layout';
 
-const config = createStandardLayout();
+const config = presets.createStandardLayout();
 
 const App = () => (
   <Root config={config}>
