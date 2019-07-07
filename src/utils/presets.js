@@ -18,6 +18,7 @@ export const createDefaultLayout = config => ({
 
 export const createStandardLayout = config => ({
   ...createDefaultLayout(),
+  clipped: true,
   navVariant: {
     xs: 'temporary',
     sm: 'permanent',
@@ -39,7 +40,6 @@ export const createFixedLayout = config => ({
     xs: false,
     md: true,
   },
-  clipped: true,
   squeezed: true,
   headerPosition: 'sticky',
   ...config,
