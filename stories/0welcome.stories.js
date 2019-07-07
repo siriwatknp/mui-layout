@@ -1,7 +1,9 @@
 import React from 'react';
-import Gist from 'react-gist';
+import { linkTo } from '@storybook/addon-links';
 import { storiesOf } from '@storybook/react';
+import Gist from 'react-gist';
 import Box from '@material-ui/core/Box';
+import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
@@ -100,6 +102,9 @@ storiesOf('Welcome', module)
         </Link>
       </Typography>
       <br />
+      <button onClick={linkTo('Welcome', 'Features')}>Features in v1.2</button>
+      <br />
+      <br />
     </Box>
   ))
   .add('Features', () => (
@@ -173,25 +178,78 @@ storiesOf('Welcome', module)
           </li>
         </ul>
       </Typography>
+      <br />
+      <Divider />
+      <br />
+      <Typography variant={'h6'} gutterBottom>
+        <b>Excited?</b>
+      </Typography>
+      <button onClick={linkTo('Welcome', 'Get started')}>Read How to</button>
     </Box>
   ))
-  .add('How to', () => (
+  .add('Get started', () => (
     <Box maxWidth={960} p={2} mx={'auto'}>
-      {/*<Typography variant={'subtitle1'}>*/}
-      {/*  <b>*/}
-      {/*    1.{' '}*/}
-      {/*    <Link*/}
-      {/*      target={'_blank'}*/}
-      {/*      rel="noopener"*/}
-      {/*      href={*/}
-      {/*        'https://material.io/design/components/navigation-drawer.html#'*/}
-      {/*      }*/}
-      {/*      color={'secondary'}*/}
-      {/*    >*/}
-      {/*      Open this sandbox*/}
-      {/*    </Link>*/}
-      {/*  </b>*/}
-      {/*</Typography>*/}
+      <Box px={1}>
+        <Typography variant={'h6'} gutterBottom>
+          <b>1. Easiest Way</b>
+        </Typography>
+        <Typography variant={'subtitle1'} gutterBottom>
+          <b>
+            <Link
+              target={'_blank'}
+              rel="noopener"
+              href={
+                'https://material.io/design/components/navigation-drawer.html#'
+              }
+              color={'secondary'}
+            >
+              Open this sandbox
+            </Link>
+          </b>{' '}
+          to see the code. and then{' '}
+          <button onClick={linkTo('Welcome', 'Configuration')}>
+            How to config
+          </button>
+        </Typography>
+        <br />
+        <Divider />
+        <br />
+        <Typography variant={'h6'} gutterBottom>
+          <b>2. Manual Way</b>
+        </Typography>
+        <Typography gutterBottom>
+          <b>create-react-app</b> is the fastest way to test and start building
+          react app.
+        </Typography>
+      </Box>
+      <Gist id={'31b89672cbbf295eb2fd6839cb1c8600'} file={'install'} />
+      <Box px={1}>
+        <Typography gutterBottom>
+          then copy the code below and paste to <b>App.js</b>
+        </Typography>
+        <Typography gutterBottom>
+          <code>ThemeProvider</code> is a must since mui-layout need to access{' '}
+          <code>breakpoints</code> in theme.
+        </Typography>
+      </Box>
+      <Gist id={'31b89672cbbf295eb2fd6839cb1c8600'} file={'mui-layout.js'} />
+      <Box px={1}>
+        <Typography variant={'h6'} gutterBottom>
+          <b>Congratulations!</b>
+        </Typography>
+        <Typography gutterBottom>
+          <b>Next Step</b>, Let's customize your layout's behavior by adjusting
+          config
+        </Typography>
+        <button onClick={linkTo('Welcome', 'Configuration')}>See config</button>
+      </Box>
+      <br />
+      <br />
+      <br />
+    </Box>
+  ))
+  .add('Configuration', () => (
+    <Box maxWidth={960} p={2} mx={'auto'}>
       <Box px={1}>
         <Typography variant={'subtitle1'} gutterBottom>
           <b>Adjust Config</b>
@@ -258,7 +316,7 @@ storiesOf('Welcome', module)
       <br />
       <Box px={1}>
         <Typography>
-          <b>Lazy? pick one from my presets</b>
+          <b>Lazy? pick one from my presets (see demo on the panel)</b>
         </Typography>
       </Box>
       <Gist id={'bc1575e3261b92c8046030f30414342c'} file={'presets'} />
