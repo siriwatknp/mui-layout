@@ -11,10 +11,10 @@ This project based on [React Material-UI](https://material-ui.com/), so you have
 
 ```bash
 // yarn
-yarn add mui-layout @material-ui/core @material-ui/styles
+yarn add mui-layout @material-ui/core @material-ui/styles @material-ui/icons
 
 // npm
-npm install mui-layout @material-ui/core @material-ui/styles
+npm install mui-layout @material-ui/core @material-ui/styles @material-ui/icons
 ```
 
 ## Demo
