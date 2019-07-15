@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '@material-ui/core';
 import createGetScreenValue from 'utils/createGetScreenValue';
+import someIs from 'utils/someIs';
 import useConfig from './useConfig';
 import useWidth from './useWidth';
 
@@ -20,14 +21,20 @@ export default (appBarHeight, interval) => {
   const initialHeight = getScreenValue(appBarHeight, initialAdjustmentHeight);
 
   if (heightAdjustmentDisabled) return 0; // disabled by user.
-  if (clipped && headerPosition === 'sticky') return initialHeight;
-  if (
-    !clipped &&
-    (headerPosition !== 'static' || headerPosition !== 'relative')
-  ) {
+  if (!clipped) {
     // do not run the effect below if behavior is not right.
     return 0;
   }
+  if (clipped && someIs(['sticky', 'fixed'], headerPosition)) {
+    return initialHeight;
+  }
+  // if (
+  //   !clipped &&
+  //   (headerPosition !== 'static' || headerPosition !== 'relative')
+  // ) {
+  //   // do not run the effect below if behavior is not right.
+  //   return 0;
+  // }
 
   const [height, setHeight] = useState(initialHeight);
   const debounced = useRef(() =>

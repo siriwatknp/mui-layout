@@ -14,7 +14,6 @@ const Root = ({ children, config }) => {
   const [opened, setOpened] = useState(false);
   const mergedConfig = useMergedConfig(config, initialConfig);
   const screen = useWidth();
-  console.log('screen', screen);
   return (
     <LayoutContext.Provider
       value={{
