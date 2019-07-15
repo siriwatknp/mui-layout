@@ -15,12 +15,14 @@ export default (appBarHeight, interval) => {
     initialAdjustmentHeight,
     heightAdjustmentSpeed,
     heightAdjustmentDisabled,
+    navVariant,
   } = useConfig();
   const currentScreen = useWidth();
   const getScreenValue = createGetScreenValue(keys, currentScreen);
   const initialHeight = getScreenValue(appBarHeight, initialAdjustmentHeight);
 
   if (heightAdjustmentDisabled) return 0; // disabled by user.
+  if (navVariant === 'temporary') return 0;
   if (!clipped) {
     // do not run the effect below if behavior is not right.
     return 0;
@@ -28,13 +30,6 @@ export default (appBarHeight, interval) => {
   if (clipped && someIs(['sticky', 'fixed'], headerPosition)) {
     return initialHeight;
   }
-  // if (
-  //   !clipped &&
-  //   (headerPosition !== 'static' || headerPosition !== 'relative')
-  // ) {
-  //   // do not run the effect below if behavior is not right.
-  //   return 0;
-  // }
 
   const [height, setHeight] = useState(initialHeight);
   const debounced = useRef(() =>
