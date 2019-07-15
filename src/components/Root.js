@@ -13,8 +13,7 @@ const Root = ({ children, config }) => {
   const [collapsed, setCollapsed] = useState(false);
   const [opened, setOpened] = useState(false);
   const mergedConfig = useMergedConfig(config, initialConfig);
-  const screen = useWidth();
-  console.log('screen', screen);
+  const screen = useWidth(); // screen could be null at first render
   return (
     <LayoutContext.Provider
       value={{

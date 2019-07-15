@@ -20,7 +20,7 @@ export default () => {
   }
 
   useEffect(() => {
-    if (collapsible) {
+    if (collapsible && screen) {
       if (collapsed && screen === collapsedBreakpoint) {
         setCollapsed(false);
       }
