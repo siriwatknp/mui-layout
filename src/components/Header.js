@@ -110,7 +110,7 @@ const Header = ({
 
 Header.propTypes = {
   style: PropTypes.shape({}),
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   toolbarProps: PropTypes.shape({}),
   renderMenuIcon: PropTypes.func,
   menuButtonProps: PropTypes.shape({}),
