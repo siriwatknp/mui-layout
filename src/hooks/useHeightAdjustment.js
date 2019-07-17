@@ -21,16 +21,6 @@ export default (appBarHeight, interval) => {
   const getScreenValue = createGetScreenValue(keys, currentScreen);
   const initialHeight = getScreenValue(appBarHeight, initialAdjustmentHeight);
 
-  if (heightAdjustmentDisabled) return 0; // disabled by user.
-  if (navVariant === 'temporary') return 0;
-  if (!clipped) {
-    // do not run the effect below if behavior is not right.
-    return 0;
-  }
-  if (clipped && someIs(['sticky', 'fixed'], headerPosition)) {
-    return initialHeight;
-  }
-
   const [height, setHeight] = useState(initialHeight);
   const debounced = useRef(() =>
     setTimeout(() => {
@@ -46,5 +36,14 @@ export default (appBarHeight, interval) => {
       window.removeEventListener('scroll', debounced.current);
     };
   }, []);
+  if (heightAdjustmentDisabled) return 0; // disabled by user.
+  if (navVariant === 'temporary') return 0;
+  if (!clipped) {
+    // do not run the effect below if behavior is not right.
+    return 0;
+  }
+  if (clipped && someIs(['sticky', 'fixed'], headerPosition)) {
+    return initialHeight;
+  }
   return height;
 };
