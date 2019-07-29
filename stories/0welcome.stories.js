@@ -15,7 +15,7 @@ storiesOf('Welcome', module)
         Material UI <Link underline={'none'}>Layout</Link>
       </Typography>
       <Typography gutterBottom>
-        <b>Version 1.1</b>
+        <b>Version 1.2</b>
       </Typography>
       <Typography indent={'small'}>
         Layout is a group of Material-UI components that are enhanced and

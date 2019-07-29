@@ -71,7 +71,7 @@ const Content = ({
       <Box height={getHeight(ctx)} />
       <Component
         {...props}
-        className={`${className} ${classes.root}`}
+        className={`${classes.root} ${className}`}
         style={{
           ...style,
           marginLeft: getMargin(ctx),
