@@ -31,7 +31,7 @@ const useStyles = makeStyles(
       flexGrow: 1,
       overflow: 'auto',
     },
-    collapseButton: {
+    toggleButton: {
       backgroundColor: palette.grey[50],
       textAlign: 'center',
       borderRadius: 0,
@@ -57,7 +57,14 @@ const useStyles = makeStyles(
   }),
 );
 
-const Nav = ({ className, header, children, renderIcon, ...props }) => {
+const Nav = ({
+  className,
+  header,
+  children,
+  renderIcon,
+  toggleProps,
+  ...props
+}) => {
   useAutoCollapse();
   const ctx = useConfig();
   const {
@@ -96,7 +103,8 @@ const Nav = ({ className, header, children, renderIcon, ...props }) => {
           </div>
           {shouldRenderButton && (
             <Button
-              className={classes.collapseButton}
+              {...toggleProps}
+              className={classes.toggleButton}
               fullWidth
               onClick={() => setCollapsed(!collapsed)}
             >
@@ -123,11 +131,13 @@ Nav.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
   header: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   renderIcon: PropTypes.func,
+  toggleProps: PropTypes.shape({}),
 };
 Nav.defaultProps = {
   className: '',
   header: null,
   renderIcon: null,
+  toggleProps: {},
 };
 
 export default Nav;

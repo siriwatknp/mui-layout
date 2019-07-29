@@ -94,6 +94,54 @@ export default App;
     },
   ```
   
+## Custom Styles
+Mostly, you will custom `Header` & `Nav`. This is an example for `Header`
+
+[Explanation is in storybook](https://siriwatknp.github.io/mui-layout/?path=/story/custom-styles--header)
+
+```js
+import { makeStyles } from '@material-ui/styles';
+
+const useHeaderStyles = makeStyles(({ palette, spacing }) => ({
+  header: {
+    backgroundColor: palette.secondary.main,
+  },
+  menuBtn: {
+    padding: spacing(2.5),
+    borderRadius: 0,
+  },
+  icon: {
+    color: palette.common.white,
+  },
+  toolbar: {
+    padding: spacing(0, 1),
+  },
+}));
+
+function App() {
+  const {
+    icon: iconCss,
+    toolbar: toolbarCss,
+    header: headerCss,
+    menuBtn: menuBtnCss,
+  } = useHeaderStyles();
+  return (
+    <Header
+      classes={{ root: headerCss }}
+      renderMenuIcon={open =>
+        open ? (
+          <ChevronLeft className={iconCss} />
+        ) : (
+          <MenuRounded classes={{ root: iconCss }} />
+        )
+      }
+      menuButtonProps={{ className: menuBtnCss }}
+      toolbarProps={{ className: toolbarCss }}
+    />
+  );
+}
+```
+  
 ## Presets
 - Standard
 
