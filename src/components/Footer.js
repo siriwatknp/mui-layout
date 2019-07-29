@@ -53,7 +53,7 @@ const Footer = ({ className, component: Component, style, ...props }) => {
   return (
     <Component
       {...props}
-      className={`${className} ${classes.root}`}
+      className={`${classes.root} ${className}`}
       style={{
         ...style,
         marginLeft: getMargin(),

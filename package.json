@@ -33,6 +33,7 @@
     "@material-ui/styles": "^4.2.0",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-notes": "^5.1.9",
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
     "@storybook/storybook-deployer": "^2.8.1",

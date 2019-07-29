@@ -8,7 +8,7 @@ export const createDefaultLayout = config => ({
   autoCollapsedDisabled: false,
   clipped: false,
   heightAdjustmentDisabled: false,
-  initialAdjustmentHeight: 64,
+  initialAdjustmentHeight: { xs: 56, sm: 64 }, // toolbar's height in xs is 56px
   heightAdjustmentSpeed: 144,
   headerPosition: 'relative',
   squeezed: false,
