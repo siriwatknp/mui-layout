@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import debounce from 'lodash/debounce';
+import { useCallback, useEffect, useState } from 'react';
 import { useTheme } from '@material-ui/core';
 import createGetScreenValue from 'utils/createGetScreenValue';
 import someIs from 'utils/someIs';
 import useConfig from './useConfig';
 import useWidth from './useWidth';
+import useEventListener from './useEventListener';
 
-export default (appBarHeight, interval) => {
+export default () => {
   const {
     breakpoints: { keys },
   } = useTheme();
@@ -19,23 +21,33 @@ export default (appBarHeight, interval) => {
   } = useConfig();
   const currentScreen = useWidth();
   const getScreenValue = createGetScreenValue(keys, currentScreen);
-  const initialHeight = getScreenValue(appBarHeight, initialAdjustmentHeight);
+  const initialHeight = getScreenValue(initialAdjustmentHeight);
 
-  const [height, setHeight] = useState(initialHeight);
-  const debounced = useRef(() =>
-    setTimeout(() => {
-      if (height > 0) {
-        const offset = initialHeight - window.scrollY;
-        setHeight(offset < 0 ? 0 : offset);
-      }
-    }, interval || heightAdjustmentSpeed),
-  );
+  const [height, setHeight] = useState(0);
+
   useEffect(() => {
-    window.addEventListener('scroll', debounced.current);
-    return () => {
-      window.removeEventListener('scroll', debounced.current);
-    };
-  }, []);
+    if (typeof initialHeight === 'number') {
+      setHeight(initialHeight);
+    }
+  }, [initialHeight]);
+
+  const handler = useCallback(
+    debounce(
+      () => {
+        // Update height
+        if (typeof initialHeight === 'number') {
+          const offset = initialHeight - window.scrollY;
+          setHeight(offset < 0 ? 0 : offset);
+        }
+      },
+      heightAdjustmentSpeed,
+      { leading: true, trailing: true },
+    ),
+    [setHeight, initialHeight],
+  );
+
+  useEventListener('scroll', handler);
+
   if (heightAdjustmentDisabled) return 0; // disabled by user.
   if (navVariant === 'temporary') return 0;
   if (!clipped) {
