@@ -29,7 +29,8 @@ const useStyles = makeStyles(
     },
     content: {
       flexGrow: 1,
-      overflow: 'auto',
+      overflowX: 'hidden',
+      overflowY: 'auto',
     },
     toggleButton: {
       backgroundColor: palette.grey[50],
