@@ -1,4 +1,4 @@
-# This repo will DEPRECATE SOON! the project will be merged to [mui-treasury](https://github.com/siriwatknp/mui-treasury) with a lot of new features!
+# This project is moved to [mui-treasury](https://github.com/siriwatknp/mui-treasury/tree/master/packages/mui-layout)
 
 <img src="https://user-images.githubusercontent.com/18292247/60601737-cb425a00-9ddc-11e9-8cb7-642fa581aa3d.png" alt="logo" width="150" height="136" />
 
